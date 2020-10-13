@@ -60,66 +60,12 @@ include('includes/config.php');
     </div> <!-- .site-mobile-menu -->
 
 
-    <div class="site-navbar-wrap js-site-navbar bg-white">
-
-      <div class="container">
-        <div class="site-navbar bg-light">
-          <div class="py-1">
-            <div class="row align-items-center">
-              <div class="col-2">
-                <h2 class="mb-0 site-logo"><a href="index.html"><img src="images/iste.png" alt="ISTE TKMCE" width="80"
-                      height="80"></a></h2>
-              </div>
-              <div class="col-10">
-                <nav class="site-navigation text-right" role="navigation">
-                  <div class="container">
-                    <!-- d-lg-none -->
-                    <div class="d-inline-block  ml-md-0 mr-auto py-3"><a href="#"
-                        class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
-                    <!-- d-lg-block -->
-                    <ul class="site-menu js-clone-nav d-none">
-                      <li class="active">
-                        <a href="index.php">Home</a>
-                      </li>
-                      <!-- <li><a href="sermons.html">Sermons</a></li>
-                      <li class="has-children">
-                        <a href="beliefs.html">Beliefs</a>
-                        <ul class="dropdown arrow-top">
-                          <li><a href="beliefs.html">God</a></li>
-                          <li><a href="beliefs.html">Humanity</a></li>
-                          <li><a href="beliefs.html">Salvation</a></li>
-                          <li class="has-children">
-                            <a href="beliefs.html">Churches</a>
-                            <ul class="dropdown">
-                              <li><a href="beliefs.html">America</a></li>
-                              <li><a href="beliefs.html">Europe</a></li>
-                              <li><a href="beliefs.html">Asia</a></li>
-                              <li><a href="beliefs.html">Africa</a></li>
-                              
-                            </ul>
-                          </li>
-
-                        </ul>
-                      </li> -->
-                      <li><a href="event.php">Events</a></li>
-                      <li><a href="about.php">About</a></li>
-                      <li><a href="contact.php">Contact</a></li>
-                      <li><a href="newsletter.php">News Letter</a></li>
-                      <li><a href="./student/login.php">Student Portal</a></li>
-                    </ul>
-                  </div>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php include('top.php'); ?>
 
     <!-- Carousel Start -->
     <div class="slide-one-item home-slider owl-carousel">
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade"
+      <div class="site-blocks-cover overlay" style="background: black;" data-aos="fade"
         data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
@@ -132,7 +78,7 @@ include('includes/config.php');
         </div>
       </div>
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_2.jpg);" data-aos="fade"
+      <div class="site-blocks-cover overlay" style="background-image: url(images/back.jpg);" data-aos="fade"
         data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
@@ -246,7 +192,7 @@ include('includes/config.php');
           training to students to develop better learning skills and personality.
 
         </p>
-        <a href="about.html" class="btn btn-primary">Read More</a>
+        <a href="about.php" class="btn btn-primary">Read More</a>
       </div>
 
     </div>
@@ -282,7 +228,6 @@ include('includes/config.php');
                     &rdquo;
                   </blockquote>
                 </p>
-                <a href="#" class="btn btn-primary">Know More</a>
               </div>
             </div>
           </div>
@@ -417,18 +362,20 @@ include('includes/config.php');
 
       </div>
 
+      
+
 
       <!-- Execom Members Start -->
       <div class="site-section block-15">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+            <div class="mx-auto text-center mb-5 section-heading">
               <h2>Execom Members</h2>
             </div>
           </div>
 
 
-          <div class="nonloop-block-15 owl-carousel" id="execomm-carousel">
+          <div class="nonloop-block-10 owl-carousel" id="execomm-carousel">
 
             <?php 
       $sql = "SELECT * FROM `execom`";
@@ -441,11 +388,11 @@ include('includes/config.php');
       {				
         if($result->category=="Senior Execom"){?>
             <div class="media-with-text">
-              <div class="img-border-sm mb-4">
+              <div class="img-border-md mb-10">
                 <a href="#" class="popup-vimeo image-play">
-                  <img style="width:250px; height:250px;"
-                    src="./admin/images/<?php echo htmlentities($result->image) ?>" alt=""
-                    class="img-fluid img-round" />
+                  <img style="border-radius:10000%; height:150px; width:150px; padding-left:10px; padding-right:10px;"
+                    src="images/<?php echo htmlentities($result->image) ?>" alt=""
+                    class="img-fluid img-round img-center" />
                 </a>
               </div>
               <center>
@@ -505,7 +452,7 @@ include('includes/config.php');
           </div>
 
           <div class="row moreBtn">
-            <a href="/about.html" class="btn btn-primary mx-auto more">View More</a>
+            <a href="about.php" class="btn btn-primary mx-auto more">View More</a>
           </div>
         </div>
       </div>
@@ -609,47 +556,10 @@ include('includes/config.php');
       </div>
     </footer> -->
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-6 text-center  ml-auto">
-
-
-            <h2 class="footer-heading  pr-3  ml-5 mb-4">Follow Us </h2>
-            <a href="#about-section" class="smoothscroll pl-0 pr-3 fb"><span class="icon-facebook"></span></a>
-            <a href="#" class="pl-3 pr-3  twtr"><span class="icon-twitter"></span></a>
-            <a href="#" class="pl-3 pr-3 insta"><span class="icon-instagram"></span></a>
-            <a href="#" class="pl-3 pr-3  lkdin"><span class="icon-linkedin"></span></a>
-            </form>
-          </div>
-
-          <div class="col-md-6 text-center  ml-auto">
-            <h2 class="footer-heading  pr-3  ml-5 mb-4">Features </h2>
-            <a href="#">Home</a>
-            <a href="#">Events</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-          </div>
-
-        </div>
-        <div class="row pt-3 mt-3 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-3">
-              <p>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved | Devoloped by 404 ISTE
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </footer>
+    <?php include('footer.php'); ?>
   </div>
 
+  <script id="TelegramLiveChatLoader" data-bot="CEB14C86-FC1E-11EA-ADFB-952423E822B5" src="//livechatbot.net/assets/chat/js/loader.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>

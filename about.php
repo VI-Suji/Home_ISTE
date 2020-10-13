@@ -46,41 +46,8 @@ include('includes/config.php');
       <div class="site-mobile-menu-body"></div>
     </div> <!-- site-mobile-menu -->
 
-
-    <div class="site-navbar-wrap js-site-navbar bg-white">
-
-      <div class="container">
-        <div class="site-navbar bg-light">
-          <div class="py-1">
-            <div class="row align-items-center">
-              <div class="col-2">
-                <h2><a href="index.html"><img src="images/iste.png" alt="logo" height="80pax" width="80pax"> </h2>
-              </div>
-              <div class="col-10">
-                <nav class="site-navigation text-right" role="navigation">
-                  <div class="container">
-                    <!-- d-lg-none -->
-                    <div class="d-inline-block  ml-md-0 mr-auto py-3"><a href="#"
-                        class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
-                    <!-- d-lg-block -->
-                    <ul class="site-menu js-clone-nav d-none">
-                      <li>
-                        <a href="index.php">Home</a>
-                      </li>
-                      <li><a href="event.php">Events</a></li>
-                      <li class="active"><a href="about.php">About</a></li>
-                      <li><a href="contact.php">Contact</a></li>
-                      <li><a href="newsletter.php">News Letter</a></li>
-                      <li><a href="./student/login.php">Student Portal</a></li>
-                    </ul>
-                  </div>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php include('top.php'); ?>
+    
     <!-- BANNER STARTS HERE -->
     <div class="site-blocks-covers overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade"
       data-stellar-background-ratio="0.2">
@@ -582,45 +549,7 @@ include('includes/config.php');
       </div>
     </div>
   </div>
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-6 text-center  ml-auto">
-
-
-          <h2 class="footer-heading  pr-3  ml-5 mb-4">Follow Us </h2>
-          <a href="#about-section" class="smoothscroll pl-0 pr-3 fb"><span class="icon-facebook"></span></a>
-          <a href="#" class="pl-3 pr-3  twtr"><span class="icon-twitter"></span></a>
-          <a href="#" class="pl-3 pr-3 insta"><span class="icon-instagram"></span></a>
-          <a href="#" class="pl-3 pr-3  lkdin"><span class="icon-linkedin"></span></a>
-          </form>
-        </div>
-
-        <div class="col-md-6 text-center  ml-auto">
-          <h2 class="footer-heading  pr-3  ml-5 mb-4">Features </h2>
-          <a href="#">Home</a>
-          <a href="#">Events</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </div>
-
-      </div>
-      <div class="row pt-3 mt-3 text-center">
-        <div class="col-md-12">
-          <div class="border-top pt-3">
-            <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | Devoloped by 404 ISTE
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
+  <?php include('footer.php'); ?>
   </div>
 
   <!--<script src="js/slick.min.js"></script> -->

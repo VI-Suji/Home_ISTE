@@ -60,61 +60,7 @@ include('includes/config.php');
     </div> <!-- .site-mobile-menu -->
 
 
-    <div class="site-navbar-wrap js-site-navbar bg-white">
-
-      <div class="container">
-        <div class="site-navbar bg-light">
-          <div class="py-1">
-            <div class="row align-items-center">
-              <div class="col-2">
-                <h2 class="mb-0 site-logo"><a href="index.html"><img src="images/iste.png" alt="ISTE TKMCE" width="80"
-                      height="80"></a></h2>
-              </div>
-              <div class="col-10">
-                <nav class="site-navigation text-right" role="navigation">
-                  <div class="container">
-                    <!-- d-lg-none -->
-                    <div class="d-inline-block  ml-md-0 mr-auto py-3"><a href="#"
-                        class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
-                    <!-- d-lg-block -->
-                    <ul class="site-menu js-clone-nav d-none">
-                      <li class="active">
-                        <a href="index.php">Home</a>
-                      </li>
-                      <!-- <li><a href="sermons.html">Sermons</a></li>
-                      <li class="has-children">
-                        <a href="beliefs.html">Beliefs</a>
-                        <ul class="dropdown arrow-top">
-                          <li><a href="beliefs.html">God</a></li>
-                          <li><a href="beliefs.html">Humanity</a></li>
-                          <li><a href="beliefs.html">Salvation</a></li>
-                          <li class="has-children">
-                            <a href="beliefs.html">Churches</a>
-                            <ul class="dropdown">
-                              <li><a href="beliefs.html">America</a></li>
-                              <li><a href="beliefs.html">Europe</a></li>
-                              <li><a href="beliefs.html">Asia</a></li>
-                              <li><a href="beliefs.html">Africa</a></li>
-                              
-                            </ul>
-                          </li>
-
-                        </ul>
-                      </li> -->
-                      <li><a href="event.php">Events</a></li>
-                      <li><a href="about.php">About</a></li>
-                      <li><a href="contact.php">Contact</a></li>
-                      <li><a href="newsletter.php">News Letter</a></li>
-                      <li><a href="./student/login.php">Student Portal</a></li>
-                    </ul>
-                  </div>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php include('top.php'); ?>
 
     <!-- Carousel Start -->
     <div class="slide-one-item home-slider owl-carousel">
@@ -151,90 +97,75 @@ include('includes/config.php');
 
 
     <!-- Upcoming Events Starts -->
+    <div class="site-section block-14 bg-light">
 
-    <div class="py-2 bg-primary upcoming-events">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <span class="caption bg-warning px-4">Upcoming Events</span>
-            <!-- <h2 class="text-white">December Camp Meeting</h2> -->
-
-            <!-- <div id="slider">
-              <div class="container1">
-                <div class="slide">
-                  <h3><a class="link" href="index.html">Ethical Hacking</a></h3>
-                  
-                </div>
-                <div class="slide">
-                  <h3><a class="link" href="index.html">Ethical Hacking</a></h3>
-                  
-                </div>
-                <div class="slide">
-                  <h3><a class="link" href="index.html">Ethical Hacking</a></h3>
-                  
-                </div>
-                <div class="slide">
-                  <h3><a class="link" href="index.html">Ethical Hacking</a></h3>
-                  
-                </div>
-                <div class="slide">
-                  <h3><a class="link" href="index.html">Ethical Hacking</a></h3>
-                 
-                </div>
-              </div>
-            </div> -->
-            <div class="w3-container pt-2 ">
-              <!-- <h1>Animation is Fun!</h1> -->
-              <p class="text-white" id="event">Event One</p>
-            </div>
-
-          </div>
-          <!-- <div class="col-md-6">
-            <span class="caption">The camp meeting will start in</span>
-            <div id="date-countdown"></div>    
-          </div> -->
-        </div>
-
-      </div>
+<div class="container">
+  
+  <div class="row">
+    <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+      <h2>Upcoming Events</h2>
     </div>
+  </div>
 
-    <!-- Upcoming Events Ends -->
-
-    <!-- <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">Church Services</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="church-service text-center">
-              <a href="#" class="d-block mb-3 thumbnail"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
-              <h3 class="heading mb-3"><a href="#">Consectetur adipisicing elit</a></h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta labore recusandae soluta quis.</p>
-              <p><a href="#" class="text-primary">Read More <span class="icon-arrow-right small"></span></a></p>
+      <div class="top-content">
+          <div class="container-fluid">
+          <div id="previous" class="carousel slide w-100" data-ride="carousel">
+              <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                        <?php 
+$sql = "SELECT * from  events where 0";
+$query = $dbh -> prepare($sql);
+$query->execute();
+$cnt=0;
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+if($query->rowCount() > 0)
+{
+foreach($results as $result)
+{				if($result->name && $cnt==0){
+?>
+<div class="carousel-item col-md-4 active">      
+            <div class="card">
+              <img src="./admin/images/<?php echo htmlentities($result->image) ?>"
+                class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo htmlentities($result->name) ?></h5>
+                <p class="card-text">
+                  <blockquote>&ldquo;<?php echo htmlentities($result->description) ?>&rdquo;
+                  </blockquote>
+                </p>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="church-service text-center">
-              <a href="#" class="d-block mb-3 thumbnail"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-              <h3 class="heading mb-3"><a href="#">Consectetur adipisicing elit</a></h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta labore recusandae soluta quis.</p>
-              <p><a href="#" class="text-primary">Read More <span class="icon-arrow-right small"></span></a></p>
+          <?php $cnt=1; ?>
+<?php }else{?>
+<div class="carousel-item col-md-4">      
+            <div class="card">
+              <img src="./admin/images/<?php echo htmlentities($result->image) ?>"
+                class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo htmlentities($result->name) ?></h5>
+                <p class="card-text">
+                  <blockquote>&ldquo;<?php echo htmlentities($result->description) ?>&rdquo;
+                  </blockquote>
+                </p>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="church-service text-center">
-              <a href="#" class="d-block mb-3 thumbnail"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-              <h3 class="heading mb-3"><a href="#">Consectetur adipisicing elit</a></h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta labore recusandae soluta quis.</p>
-              <p><a href="#" class="text-primary">Read More <span class="icon-arrow-right small"></span></a></p>
-            </div>
+          <?php }}} ?>
+              </div>
+              <a class="carousel-control-prev w-auto" href="#previous" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next w-auto" href="#previous" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </a>
           </div>
-        </div>
       </div>
-    </div> -->
+  </div>
+  </div>
+  </div>
+</div>
 
     <!-- Section to work on new Previous Events Start -->
 
@@ -530,46 +461,7 @@ foreach($results as $result)
         </div>
       </div>
     </footer> -->
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-6 text-center  ml-auto">
-
-
-          <h2 class="footer-heading  pr-3  ml-5 mb-4">Follow Us </h2>
-          <a href="#about-section" class="smoothscroll pl-0 pr-3 fb"><span class="icon-facebook"></span></a>
-          <a href="#" class="pl-3 pr-3  twtr"><span class="icon-twitter"></span></a>
-          <a href="#" class="pl-3 pr-3 insta"><span class="icon-instagram"></span></a>
-          <a href="#" class="pl-3 pr-3  lkdin"><span class="icon-linkedin"></span></a>
-          </form>
-        </div>
-
-        <div class="col-md-6 text-center  ml-auto">
-          <h2 class="footer-heading  pr-3  ml-5 mb-4">Features </h2>
-          <a href="#">Home</a>
-          <a href="#">Events</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </div>
-
-      </div>
-      <div class="row pt-3 mt-3 text-center">
-        <div class="col-md-12">
-          <div class="border-top pt-3">
-            <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | Devoloped by 404 ISTE
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
+    <?php include('footer.php'); ?>
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
