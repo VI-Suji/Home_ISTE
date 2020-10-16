@@ -1,13 +1,13 @@
-﻿<?php 
-// define('DB_HOST','istetkmce.in');
-// define('DB_USER','ezitmxze_admin');
-// define('DB_PASS','Istetkmce@2019');
-// define('DB_NAME','ezitmxze_iste');
+<?php 
+define('DB_HOST','istetkmce.in');
+define('DB_USER','ezitmxze_admin');
+define('DB_PASS','Istetkmce@2019');
+define('DB_NAME','ezitmxze_iste');
 
-define('DB_HOST','localhost');
-define('DB_USER','root');
-define('DB_PASS','');
-define('DB_NAME','iste');
+// define('DB_HOST','localhost');
+// define('DB_USER','root');
+// define('DB_PASS','');
+// define('DB_NAME','iste');
 // Establish database connection.
 try
 {

@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <link rel="icon" href="images/GEARFINAL.png" type="image/icon type">
   <title>Contact US &mdash; ISTE TKMCE</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,20 +48,16 @@
     <?php include('top.php'); ?>
 
 
-    <div class="slide-one-item home-slider owl-carousel">
-
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade"
-        data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-7 text-center" data-aos="fade">
-              <span class="caption mb-3">Get In Touch</span>
-              <h1 class="mb-4">Contact Us</h1>
-            </div>
+    <div class="site-blocks-covers overlay" style="background: black;" data-aos="fade"
+      data-stellar-background-ratio="0.2">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7 text-center" data-aos="fade">
+            <span class="caption mb-3">ISTE TKMCE</span>
+            <h1 class="mb-4">Contact Us</h1>
           </div>
         </div>
       </div>
-
     </div>
 
 
@@ -72,7 +70,7 @@
 
 
 
-            <form method="post" action="https://istetkmcecomm.herokuapp.com/contact" class="p-5 bg-white">
+            <form method="post" action="" class="p-5 bg-white">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">

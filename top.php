@@ -5,7 +5,7 @@
           <div class="py-1">
             <div class="row align-items-center">
               <div class="col-2">
-                <h2><a href="index.html"><img src="images/GEARFINAL.png" alt="logo" height="80pax" width="80pax"> </h2>
+                <h2 ><a href="#"><img src="images/GEARFINAL.png" alt="logo" height="80pax" width="80pax"> </h2>
               </div>
               <div class="col-10">
                 <nav class="site-navigation text-right" role="navigation">

@@ -1,11 +1,14 @@
 <?php
 session_start();
+// exit(0);
 include('includes/config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <meta property="og:image" content="images/GEARFINAL.png">
+  <link rel="icon" href="images/GEARFINAL.png" type="image/icon type">
   <title>Official Website Of ISTE TKMCE Chapter</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -65,7 +68,7 @@ include('includes/config.php');
     <!-- Carousel Start -->
     <div class="slide-one-item home-slider owl-carousel">
 
-      <div class="site-blocks-cover overlay" style="background: black;" data-aos="fade"
+      <div class="site-blocks-cover overlay" style="background-image: url(images/bg2.jpg);"  data-aos="fade"
         data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
@@ -78,7 +81,7 @@ include('includes/config.php');
         </div>
       </div>
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/back.jpg);" data-aos="fade"
+      <div class="site-blocks-cover overlay" style="background-image: url(images/bg1.jpg);" data-aos="fade"
         data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
@@ -131,7 +134,7 @@ include('includes/config.php');
             </div> -->
             <div class="w3-container pt-2 ">
               <!-- <h1>Animation is Fun!</h1> -->
-              <p class="text-white" id="event">Event One</p>
+              <p class="text-white" id="event">A Talk by Dr.Martin Payyappilly (Oct 16 - 7 pm)</p>
             </div>
 
           </div>
@@ -199,7 +202,7 @@ include('includes/config.php');
     <!-- About Us End -->
 
     <!-- Section to work on new Previous Events Start -->
-    <div class="site-section block-14 bg-light">
+    <div style="padding-top:15px;" class="site-section block-14 bg-light">
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
@@ -213,158 +216,31 @@ include('includes/config.php');
       $query->execute();
       $results=$query->fetchAll(PDO::FETCH_OBJ);
       if($query->rowCount() > 0)
-      {
+      {$cnt=0;
       foreach($results as $result)
-      {				?>
+      {	if($cnt!=3){			?>
           <div class="col-md-4 col-sm-12 mb-3 ">
-            <div class="card">
-              <img src="./admin/images/<?php echo htmlentities($result->image) ?>" class="card-img-top"
-                alt="App Development WS">
+            <div style="display: flex; min-height: 700px; height: 760px; overflow: hidden;" class="card">
+              <img style="padding-top: 10px; padding-left: 10px; padding-right: 10px;" src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>" class="card-img-top"
+                alt="<?php echo htmlentities($result->name) ?>">
               <div class="card-body">
                 <h5 class="card-title"><?php echo htmlentities($result->name) ?></h5>
                 <p class="card-text">
-                  <blockquote>&ldquo;<?php echo htmlentities($result->description) ?><br><br>
+                  <blockquote><?php echo htmlentities($result->description) ?><br><br>
                     &nbsp;
-                    &rdquo;
                   </blockquote>
                 </p>
               </div>
             </div>
           </div>
-          <?php }}?>
-        </div>
-
-
-
-
-        <!-- <div class="nonloop-block-14 owl-carousel">
-          
-          <div class="p-4">
-            <div class="d-flex block-testimony"> -->
-        <!-- <div class="person mr-3"> -->
-        <!-- <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded">-->
-        <!-- <div class="img"> <img src="images/previous events/FB_IMG_1569047483757.jpg" alt="00000"></div> HERE THE IMAGE IN THE PREVIOUS EVENT -1 -->
-        <!-- </div> -->
-        <!-- <div>
-                <h2 class="h5">Katie Johnson</h2>
-                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
-              </div> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- <div class="p-4"> -->
-        <!-- <div class="d-flex block-testimony"> -->
-        <!-- <div class="person mr-3">
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded">
-              </div> -->
-        <!-- <div>
-                <h2 class="h5">App Development Workshop</h2>
-                <blockquote>&ldquo;<p>The ISTE students chapter of TKMCE conducted a 2 day workshop on App Development for the students of TKMCE. The workshop was held from 27th to 28th October at the CCFL Lab.</p>&rdquo;</blockquote>
-                <a href="#">Read More...</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-4">
-              <div class="d-flex block-testimony"> -->
-        <!-- <div class="person mr-3"> -->
-        <!-- <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded">-->
-        <!-- <div class="img"> <img src="images/previous events/67578077_2348099588603456_5024053929711739326_n.jpg" alt="00000"></div> HERE THE IMAGE IN THE PREVIOUS EVENT -1 -->
-        <!-- </div> -->
-        <!-- <div>
-                  <h2 class="h5">Katie Johnson</h2>
-                  <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
-                </div> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- <div class="p-4"> 
-              <div class="d-flex block-testimony">
-                 <div class="person mr-3">
-                  <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded">
-                </div> 
-                <div>
-                  <h2 class="h5">Gaming Royale</h2>
-                  <blockquote>&ldquo;<p>As part of the techno cultural fest HESTIA 2K19 held from 28th to 31st March 2019, the ISTE students chapter of TKMCE conducted the  Gaming Royale, a platform for entertainmental games that added a taste of enthusiasm to the tech fest.</p>&rdquo;</blockquote>
-                  <a href="#">Read More...</a>
-                </div>
-              </div>
-            </div>
-          <div class="p-4">
-            <div class="d-flex block-testimony">
-              <div class="person mr-3"> 
-               <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded">
-                <div class="img"> <img src="images/previous events/67059419_809343279467798_741432067154248475_n.jpg" alt="00000"></div>
-
-               </div> -->
-        <!-- <div>
-                <h2 class="h5">Shane Holmes</h2>
-                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
-              </div> 
-            </div>-->
-        <!-- </div> -->
-        <!-- <div class="p-4"> -->
-        <!-- <div class="d-flex block-testimony">
-              <div class="person mr-3">
-                <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded">
-              </div>
-              <div>
-                <h2 class="h5">Machine Learning Workshop</h2>
-                <blockquote>&ldquo;<p>Machine Learning, is an application of Artificial Intelligence, focuses on the development of computer programs that can access data and use it learn for themselves. ISTE students chapter TKMCE conducted a 2 day workshop on Machine Learning.</p>&rdquo;</blockquote>
-                <a href="#">Read More...</a>
-              </div>
-            </div>
-          </div>
-
+          <?php $cnt=$cnt+1;}}}?>
         </div>
 
       </div>
       
-    </div> -->
-        <!-- Section to work on new Previous Events End -->
-
-        <!-- <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">More Features</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="text-center p-4 item">
-              <span class="flaticon-paper-plane display-3 mb-3 d-block text-primary"></span>
-              <h2 class="h5 text-uppercase">Our Mission</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
-              <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="text-center p-4 item">
-              <span class="flaticon-speaker display-3 mb-3 d-block text-primary"></span>
-              <h2 class="h5 text-uppercase">Listen To Our Sermons</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
-              <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="text-center p-4 item">
-              <span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
-              <h2 class="h5 text-uppercase">Testimonies</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
-              <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
-            </div>
-          </div>
-
-        </div>
+      <div class="container justify-content-center text-center">
+        <a href="event.php" class="btn btn-primary">View More</a>
       </div>
-    </div> -->
-
-      </div>
-
-      
-
-
       <!-- Execom Members Start -->
       <div class="site-section block-15">
         <div class="container">
@@ -387,14 +263,15 @@ include('includes/config.php');
       foreach($results as $result)
       {				
         if($result->category=="Senior Execom"){?>
+        
             <div class="media-with-text">
+                <center>
               <div class="img-border-md mb-10">
-                <a href="#" class="popup-vimeo image-play">
-                  <img style="border-radius:10000%; height:150px; width:150px; padding-left:10px; padding-right:10px;"
-                    src="images/<?php echo htmlentities($result->image) ?>" alt=""
+                  <img style="display: flex; height:250px; width:250px;"
+                    src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>" alt=""
                     class="img-fluid img-round img-center" />
-                </a>
               </div>
+              </center>
               <center>
                 <h2 class="heading mb-0"><a href="#"><?php echo htmlentities($result->name) ?></a></h2>
                 <span class="mb-3 d-block post-date"><a
@@ -457,8 +334,6 @@ include('includes/config.php');
         </div>
       </div>
     </div>
-
-    <!-- Execom Members Ends -->
 
 
     <!-- <div class="py-5 quick-contact-info">
@@ -603,11 +478,26 @@ include('includes/config.php');
       autoplay: true,
       margin: 10,
       autoplayTimeout: 1000,
-      autoplayHoverPause: true
+      autoplayHoverPause: true,
+      responsive: {
+          0:{
+            items:1,
+            nav:false
+        },
+        320:{
+            items:1,
+            nav:true
+        },
+        700:{
+            items:3,
+            nav:false,
+            loop:true
+        }
+      }
     });
 
     // Upcoming Events JS Code
-    var eventList = ['Event One', 'Event Two', 'Event Three', 'Event four'];
+    var eventList = ['A Talk by Dr.Martin Payyappilly (Oct 16 - 7 pm)'];
     var i = 1;
     function changeEvent() {
 

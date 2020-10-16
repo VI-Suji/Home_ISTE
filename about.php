@@ -6,6 +6,7 @@ include('includes/config.php');
 <html lang="en">
 
 <head>
+    <link rel="icon" href="images/GEARFINAL.png" type="image/icon type">
   <title>ABOUT US &mdash; ISTE TKMCE</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,8 +49,7 @@ include('includes/config.php');
 
     <?php include('top.php'); ?>
     
-    <!-- BANNER STARTS HERE -->
-    <div class="site-blocks-covers overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade"
+    <div class="site-blocks-covers overlay" style="background: black;" data-aos="fade"
       data-stellar-background-ratio="0.2">
       <div class="container">
         <div class="row align-items-center justify-content-center">
@@ -60,8 +60,7 @@ include('includes/config.php');
         </div>
       </div>
     </div>
-    <!--
-  </div> -->
+
     <div class="site-section bg-light">
       <div class="container">
         <div class="row align-items-center">
@@ -71,7 +70,7 @@ include('includes/config.php');
               <span class="icon-wrap">
                 <!--  <span class="icon icon-play"></span> -->
               </span>
-              <img src="images/img_2.jpg" alt="" class="img-fluid">
+              <img src="images/about.jpg" alt="" class="img-fluid">
               </a>
             </div>
 
@@ -149,62 +148,98 @@ include('includes/config.php');
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 mb-5 mb-md-0">
-          <div class="img-border"><img src="images/img_2.jpg" alt="" class="img-fluid"></div>
+          <div class="img-border"><img src="images/reshmi.jpg" alt="123" class="img-fluid"></div>
         </div>
         <div class="col-md-5 ml-auto facultyContent">
 
           <h2 class="h2 mb-0">Faculty in charge </h2>
           <div class="facultyDetails">
-            <p>
-              <!---mb-4-->
+            <p class="-mb-4">
               RESHMI S L <br>
-              ASSOCIATE PROFFESOR<br>
+              ASSISTANT PROFFESOR<br>
               MECHANICAL DEPARTMENT<br>
-              CONTACT:
             </p>
+            
           </div>
         </div>
 
       </div>
     </div>
   </div>
+  
+  
 
   <!--senior execom starts here-->
-  <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-    <h2 class="mb-5">Senior Execom</h2>
-  </div>
   <div class="container">
-    <div class="row">
-<?php 
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+          <h2 class="mb-5">Senior Execom Members</h2>
+        </div>
+      </div>
+      <!-- Top content -->
+      <div class="top-content">
+        <div class="container-fluid">
+          <div style="display: flex; min-height: 450px; height: 600px; overflow: hidden;" id="junior" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+            <?php 
       $sql = "SELECT * FROM `execom`";
       $query = $dbh -> prepare($sql);
       $query->execute();
+      $cnt=0;
       $results=$query->fetchAll(PDO::FETCH_OBJ);
       if($query->rowCount() > 0)
       {
       foreach($results as $result)
       {				
         if($result->category=="Senior Execom"){
+          if($cnt==0){
           // echo "<script type='text/javascript'>alert('.$result->name.');</script>";
           ?>
-      <div class="col-md-6 col-lg-4 mb-5">
-        <div class="church-service text-center">
-          <figure class="effect-lily"><img src="admin/images/<?php echo htmlentities($result->image);?>" alt="Image" class="img-fluid">
-            <!-- CHANGE THE PHOTO OF CHAIR -->
+              <div style="display: flex; min-height: 450px; height: 600px; overflow: hidden;" class="carousel-item col-md-4 active">
+                <figure class="effect-life"><img style="height:400px;" src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image);?>"
+                    class="img-fluid mx-auto d-block" alt="img1">
+                  <figcaption>
+                    <div>
+                      <h2><?php echo htmlentities($result->name);?></h2>
+                      <p> <?php echo htmlentities($result->position);?></p>
+                      <p><?php echo htmlentities($result->category);?></p>
+                      </p>
+                    </div>
+                </figure>
+                </figcaption>
+              </div>
+              <?php $cnt=1;?>
+        <?php }else{?>
+          <div style="display: flex; min-height: 450px; height: 600px; overflow: hidden;" class="carousel-item col-md-4">
+          <figure class="effect-life"><img style="height:400px;" src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image);?>"
+              class="img-fluid mx-auto d-block" alt="img1">
             <figcaption>
               <div>
                 <h2><?php echo htmlentities($result->name);?></h2>
-                <!--CHANGE THE NAME OF THE CHAIR-->
-                <p> <?php echo htmlentities($result->position);?><br><?php echo htmlentities($result->category);?></p>
-                <!--CHANGE THE BRANCH-->
+                <p> <?php echo htmlentities($result->position);?></p>
+                <p><?php echo htmlentities($result->category);?></p>
+                </p>
               </div>
-            </figcaption>
           </figure>
+          </figcaption>
+        </div>
+       <?php }}}}?>
+            </div>
 
+          </div>
+          <a class="carousel-control-prev" href="#junior" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#junior" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
-      <?php }}} ?>
     </div>
+  </div>
+  <!--Junior Execom starts-->
     <div class="container">
       <div class="row">
         <div class="col-md-6 mx-auto text-center mb-5 section-heading">
@@ -231,7 +266,7 @@ include('includes/config.php');
           // echo "<script type='text/javascript'>alert('.$result->name.');</script>";
           ?>
               <div class="carousel-item col-md-4 active">
-                <figure class="effect-life"><img src="admin/images/<?php echo htmlentities($result->image);?>"
+                <figure class="effect-life"><img style="height:400px; padding-left:10px; padding-right:10px;" src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image);?>"
                     class="img-fluid mx-auto d-block" alt="img1">
                   <figcaption>
                     <div>
@@ -246,7 +281,7 @@ include('includes/config.php');
               <?php $cnt=1;?>
         <?php }else{?>
           <div class="carousel-item col-md-4">
-          <figure class="effect-life"><img src="admin/images/<?php echo htmlentities($result->image);?>"
+          <figure class="effect-life"><img style="height:400px; padding-left:10px; padding-right:10px;" src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image);?>"
               class="img-fluid mx-auto d-block" alt="img1">
             <figcaption>
               <div>
@@ -259,149 +294,7 @@ include('includes/config.php');
           </figcaption>
         </div>
        <?php }}}}?>
-              <!-- <div class="carousel-item col-md-4">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/amjad.jpeg" class="img-fluid mx-auto d-block"
-                    alt="img2">
-                  <figcaption>
-                    <div>
-                      <h2>AMJAD</h2>
-                      <p> PROGRAM COORDINATOR</p>
-                      <p> CS THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div>
-              <div class="carousel-item col-md-4">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/SIDHARATH.jpg"
-                    class="img-fluid mx-auto d-block" alt="img3">
-                  <figcaption>
-                    <div>
-                      <h2>SIDHARTH</h2>
-                      <p> PROGRAM COORDINATOR</p>
-                      <p> CHEMICAL THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div>
-              <div class="carousel-item col-md-4">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/Bhagya.jpg" class="img-fluid mx-auto d-block"
-                    alt="img4">
-                  <figcaption>
-                    <div>
-                      <h2>BHAGYASREE</h2>
-                      <p> PROGRAM COORDINATOR</p>
-                      <p> ECE THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div>
-              <div class="carousel-item col-md-4">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/LEKSHMI.JPG"
-                    class="img-fluid mx-auto d-block" alt="img5">
-                  <figcaption>
-                    <div>
-                      <h2>LEKSHMI</h2>
-                      <p> PROGRAM COORDINATOR</p>
-                      <p> ECE THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div>
-              <div class="carousel-item col-md-4">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/ABEL.JPG" class="img-fluid mx-auto d-block"
-                    alt="img6">
-                  <figcaption>
-                    <div>
-                      <h2>ABEL</h2>
-                      <p> MEDIA</p>
-                      <p> ECE THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div>
-              <div class="carousel-item col-md-4">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/SHWEETHA.JPG"
-                    class="img-fluid mx-auto d-block" alt="img7">
-                  <figcaption>
-                    <div>
-                      <h2>SHWEETHA</h2>
-                      <p> MEDIA</p>
-                      <p> ECE THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div>
-              <div class="carousel-item col-md-4">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/VISHNU B VINOD.jpg"
-                    class="img-fluid mx-auto d-block" alt="img8">
-                  <figcaption>
-                    <div>
-                      <h2>VISHNU B VINOD</h2>
-                      <p> EXECOM MEMBER</p>
-                      <p> ECE THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div>
-              <div div class="carousel-item col-md-4">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/NAHALA.JPG" class="img-fluid mx-auto d-block"
-                    alt="img8">
-                  <figcaption>
-                    <div>
-                      <h2>NAHALA</h2>
-                      <p> DESIGN</p>
-                      <p> civil THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div>
-              <div class="carousel-item col-md-4">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/AISHA.JPG" class="img-fluid mx-auto d-block"
-                    alt="img8">
-                  <figcaption>
-                    <div>
-                      <h2>AISHA</h2>
-                      <p>DESIGN</p>
-                      <p> civil THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div>
-              <div class="carousel-item col-md-4">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/sruthy.jpg" class="img-fluid mx-auto d-block"
-                    alt="img8">
-                  <figcaption>
-                    <div>
-                      <h2>SRUTHY</h2>
-                      <p>DOCUMENTATION</p>
-                      <p> EEE THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div>
-              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                <figure class="effect-life"><img src="images/JUNIOR EXECOM/AKSHARA.jpg"
-                    class="img-fluid mx-auto d-block" alt="img8">
-                  <figcaption>
-                    <div>
-                      <h2>AKSHARA</h2>
-                      <p>DOCUMENTATION</p>
-                      <p> civil THIRD YEAR </p>
-                      </p>
-                    </div>
-                </figure>
-                </figcaption>
-              </div> -->
+              
             </div>
 
           </div>
@@ -443,7 +336,7 @@ include('includes/config.php');
           // echo "<script type='text/javascript'>alert('.$result->name.');</script>";
           ?>
             <div class="carousel-item col-md-4 active">
-              <figure class="effect-life"><img src="admin/images/<?php echo htmlentities($result->image);?>"
+              <figure class="effect-life"><img style="height:400px; padding-left:10px; padding-right:10px;"  src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image);?>"
                   class="img-fluid mx-auto d-block" alt="img2">
                 <figcaption>
                   <div>
@@ -458,7 +351,7 @@ include('includes/config.php');
             <?php $cnt=1; ?>
             <?php }else{?>
               <div class="carousel-item col-md-4">
-              <figure class="effect-life"><img src="admin/images/<?php echo htmlentities($result->image);?>"
+              <figure class="effect-life"><img style="height:400px; padding-left:10px; padding-right:10px;"  src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image);?>"
                   class="img-fluid mx-auto d-block" alt="img2">
                 <figcaption>
                   <div>

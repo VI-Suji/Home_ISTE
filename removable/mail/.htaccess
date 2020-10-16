@@ -1,0 +1,7 @@
+
+RewriteOptions inherit
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^mail\.istetkmce\.in$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.mail\.istetkmce\.in$
+RewriteRule ^/?$ "https\:\/\/holy\.herosite\.pro\:2096\/" [R=301,L]
