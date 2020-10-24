@@ -285,7 +285,7 @@ include('includes/config.php');
     </div>
     </div>
     <div class="col-md-4" >
-    <h4 class="text-center"><strong>CHAIR</strong></h4>
+    <h4 class="text-center"><strong>CHAIRPERSON</strong></h4>
     <hr>
     <div class="profile-card-2"><img src="./images/bhagyasree.jpg" class="img img-responsive">
         <div class="profile-name">BHAGYASREE</div>
@@ -294,7 +294,7 @@ include('includes/config.php');
     </div>
     </div>
     <div class="col-md-4">
-    <h4 class="text-center"><strong>VICE CHAIR</strong></h4>
+    <h4 class="text-center"><strong>VICE CHAIRPERSON</strong></h4>
     <hr>
     <div class="profile-card-2"><img src="./images/vishnu b vinod.jpg" class="img img-responsive">
         <div class="profile-name">VISHNU B VINOD</div>
