@@ -15,6 +15,7 @@ include('includes/config.php');
 
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Work+Sans:300,400,700" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152957826-1"></script>
   <script>
@@ -25,6 +26,8 @@ include('includes/config.php');
     gtag('config', 'UA-152957826-1');
   </script>
 
+
+  
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/magnific-popup.css">
@@ -43,6 +46,8 @@ include('includes/config.php');
   <link rel="stylesheet" href="css/aos.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/test.css">
+  <!-- <link rel="stylesheet" href="css/trial.css"> -->
 
   <!-- Custom CSS for previous events animation -->
   <link rel="stylesheet" href="css/pe.css">
@@ -68,8 +73,7 @@ include('includes/config.php');
     <!-- Carousel Start -->
     <div class="slide-one-item home-slider owl-carousel">
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/bg2.jpg);"  data-aos="fade"
-        data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/bg2.jpg);">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
@@ -81,8 +85,7 @@ include('includes/config.php');
         </div>
       </div>
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/bg1.jpg);" data-aos="fade"
-        data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/bg1.jpg);" >
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
@@ -185,32 +188,59 @@ include('includes/config.php');
       </div>
     </div> -->
 
-    <!-- About Us Start -->
-    <div class="site-section">
-      <div class="container justify-content-center text-center">
-        <h2 class="text-center">About Us</h2>
-        <p class="text-justify">
-          ISTE Students’ Chapter assists and contributes in the production and development of top quality professional
+    <div class="wrapper">
+  <h1 class="head">About Us</h1>
+  <div class="quote"> ISTE Students’ Chapter assists and contributes in the production and development of top quality professional
           engineers and technicians needed by the industry and other organizations and also provides guidance and
-          training to students to develop better learning skills and personality.
+          training to students to develop better learning skills and personality.</div>
+</div>
+</div>
 
-        </p>
-        <a href="about.php" class="btn btn-primary">Read More</a>
-      </div>
-
-    </div>
     <!-- About Us End -->
 
-    <!-- Section to work on new Previous Events Start -->
-    <div style="padding-top:15px;" class="site-section block-14 bg-light">
-      <div class="container">
-        <div class="row">
+    <!-- Services -->
+
+    <section class="container">
+    <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+            <h2>Our Services</h2>
+          </div>
+  <div class="services-grid">
+    <div class="service service1">
+      <i class="ti-file"></i>
+      <h4>NEWS LETTER</h4>
+      <p>You can access exclusive links for short checklists to original articles and posts where you can study the subject in detail!</p>
+    </div>
+
+    <div class="service service2">
+      <i class="ti-folder"></i>
+      <h4>ARTICLE</h4>
+      <p>Principled research papers dealing with theoretical, methodological, empirical and
+                                                    application-related aspects of technical education</p>
+    </div>
+
+    <div class="service service3">
+      <i class="ti-light-bulb"></i>
+      <h4>PROJECT DEVELOPMENT</h4>
+      <p> Students of who are doing project work involving product development, fabrication, design, model studies, etc.</p>
+    </div>
+    <div class="service service4">
+      <i class="ti-server"></i>
+      <h4>SERVER ACCESS</h4>
+      <p><br>Server access allows users to access and manage the actual system interfaces and files.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Service end -->
+
+    <div class="mt-4 container">
+    <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
             <h2>Previous Events</h2>
           </div>
         </div>
-        <div class="row">
-          <?php 
+    <div class="row">
+    <?php 
       $sql = "SELECT * FROM `events`";
       $query = $dbh -> prepare($sql);
       $query->execute();
@@ -219,121 +249,67 @@ include('includes/config.php');
       {$cnt=0;
       foreach($results as $result)
       {	if($cnt!=3){			?>
-          <div class="col-md-4 col-sm-12 mb-3 ">
-            <div style="display: flex; min-height: 700px; height: 760px; overflow: hidden;" class="card">
-              <img style="padding-top: 10px; padding-left: 10px; padding-right: 10px;" src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>" class="card-img-top"
-                alt="<?php echo htmlentities($result->name) ?>">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo htmlentities($result->name) ?></h5>
-                <p class="card-text">
-                  <blockquote><?php echo htmlentities($result->description) ?><br><br>
-                    &nbsp;
-                  </blockquote>
-                </p>
-              </div>
-            </div>
-          </div>
-          <?php $cnt=$cnt+1;}}}?>
-        </div>
+    <div class="col-md-4">
+    <hr>
+    <div class="profile-card-6"><img src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>" class="img img-responsive">
+        <div class="profile-name"><?php echo htmlentities($result->name) ?></div>
+        <div class="profile-position"><?php echo htmlentities($result->date) ?></div>
+    </div>
+</div>
+      <?php $cnt=$cnt+1;}}}?>
+</div>
+</div>
 
-      </div>
       
-      <div class="container justify-content-center text-center">
+      <div class="mt-3 container justify-content-center text-center">
         <a href="event.php" class="btn btn-primary">View More</a>
       </div>
-      <!-- Execom Members Start -->
-      <div class="site-section block-15">
-        <div class="container">
+
+      <div class="container mt-4">
           <div class="row">
             <div class="mx-auto text-center mb-5 section-heading">
-              <h2>Execom Members</h2>
+              <h2>TEAM ISTE</h2>
             </div>
           </div>
-
-
-          <div class="nonloop-block-10 owl-carousel" id="execomm-carousel">
-
-            <?php 
-      $sql = "SELECT * FROM `execom`";
-      $query = $dbh -> prepare($sql);
-      $query->execute();
-      $results=$query->fetchAll(PDO::FETCH_OBJ);
-      if($query->rowCount() > 0)
-      {
-      foreach($results as $result)
-      {				
-        if($result->category=="Senior Execom"){?>
-        
-            <div class="media-with-text">
-                <center>
-              <div class="img-border-md mb-10">
-                  <img style="display: flex; height:250px; width:250px;"
-                    src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>" alt=""
-                    class="img-fluid img-round img-center" />
-              </div>
-              </center>
-              <center>
-                <h2 class="heading mb-0"><a href="#"><?php echo htmlentities($result->name) ?></a></h2>
-                <span class="mb-3 d-block post-date"><a
-                    href="#"><?php echo htmlentities($result->position) ?></a></span>
-              </center>
-              <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p> -->
-            </div>
-            <?php }}}?>
-            <!-- <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="popup-vimeo image-play">
-                  <img src="images/img_3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
-              <span class="mb-3 d-block post-date">Dec 20th, 2018 &bullet; By <a href="#">Admin</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-            
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="popup-vimeo image-play">
-                  <img src="images/img_1.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
-              <span class="mb-3 d-block post-date">Dec 20th, 2018 &bullet; By <a href="#">Admin</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-          
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="popup-vimeo image-play">
-                  <img src="images/img_2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
-              <span class="mb-3 d-block post-date">Dec 20th, 2018 &bullet; By <a href="#">Admin</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-          
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="popup-vimeo image-play">
-                  <img src="images/img_3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
-              <span class="mb-3 d-block post-date">Dec 20th, 2018 &bullet; By <a href="#">Admin</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div> -->
-
-
-
-          </div>
-
-          <div class="row moreBtn">
-            <a href="about.php" class="btn btn-primary mx-auto more">View More</a>
-          </div>
-        </div>
       </div>
+
+      <div class="container">
+	<div class="row">
+		<div class="col-md-4">
+    <h4 class="text-center"><strong>FACULTY IN CHARGE</strong></h4>
+    <hr>
+    <div class="profile-card-2"><img src="./images/reshmi.jpg" class="img img-responsive">
+        <div class="profile-name">RESHMI S L </div>
+        <div class="profile-username">MECHANICAL DEPT</div>
+        <!-- <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div> -->
     </div>
+    </div>
+    <div class="col-md-4" >
+    <h4 class="text-center"><strong>CHAIR</strong></h4>
+    <hr>
+    <div class="profile-card-2"><img src="./images/bhagyasree.jpg" class="img img-responsive">
+        <div class="profile-name">BHAGYASREE</div>
+        <div class="profile-username">ELECTRONICS</div>
+        <!-- <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div> -->
+    </div>
+    </div>
+    <div class="col-md-4">
+    <h4 class="text-center"><strong>VICE CHAIR</strong></h4>
+    <hr>
+    <div class="profile-card-2"><img src="./images/vishnu b vinod.jpg" class="img img-responsive">
+        <div class="profile-name">VISHNU B VINOD</div>
+        <div class="profile-username">ELECTRONICS</div>
+        <!-- <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div> -->
+    </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="container justify-content-center text-center">
+        <a href="about.php" class="btn btn-primary">View More</a>
+      </div>
+
 
 
     <!-- <div class="py-5 quick-contact-info">

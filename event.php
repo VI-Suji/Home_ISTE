@@ -42,6 +42,8 @@ include('includes/config.php');
 
   <link rel="stylesheet" href="css/style.css">
 
+  <link rel="stylesheet" href="css/test.css">
+
   <!-- Custom CSS for previous events animation -->
   <link rel="stylesheet" href="css/pe.css">
 
@@ -80,151 +82,40 @@ include('includes/config.php');
     <!-- Carousel End -->
 
 
-    <!-- Upcoming Events Starts -->
-    <?php 
-$sql = "SELECT * from  events where 0";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$cnt=0;
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{				if($result->name && $cnt==0){
-?>
-    <div class="site-section block-14 bg-light">
-
-<div class="container">
-  
-  <div class="row">
-    <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-      <h2>Upcoming Events</h2>
-    </div>
-  </div>
-
-      <div class="top-content">
-          <div class="container-fluid">
-          <div id="previous" class="carousel slide w-100" data-ride="carousel">
-              <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                        
-<div class="carousel-item col-md-4 active">      
-            <div class="card">
-              <img src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>"
-                class="card-img-top" alt="">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo htmlentities($result->name) ?></h5>
-                <p class="card-text">
-                  <blockquote>&ldquo;<?php echo htmlentities($result->description) ?>&rdquo;
-                  </blockquote>
-                </p>
-              </div>
-            </div>
-          </div>
-          <?php $cnt=1; ?>
-<?php }else{?>
-<div class="carousel-item col-md-4">      
-            <div class="card">
-              <img src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>"
-                class="card-img-top" alt="">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo htmlentities($result->name) ?></h5>
-                <p class="card-text">
-                  <blockquote>&ldquo;<?php echo htmlentities($result->description) ?>&rdquo;
-                  </blockquote>
-                </p>
-              </div>
-            </div>
-          </div>
-          <?php }}} ?>
-              </div>
-              <a class="carousel-control-prev w-auto" href="#previous" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next w-auto" href="#previous" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-              </a>
-          </div>
-      </div>
-  </div>
-  </div>
-  </div>
-</div>
+    
 
     <!-- Section to work on new Previous Events Start -->
 
-     <!-- Upcoming Events Starts -->
-    <div class="site-section block-14 bg-light">
-
-<div class="container">
+     <!-- Previous Events Starts -->
   
-  <div class="row">
-    <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-      <h2>Previous Events</h2>
+     <div class="mt-5 container">
+    <div class="row">
+          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+            <h2>Previous Events</h2>
+          </div>
+        </div>
+    <div class="row">
+    <?php 
+      $sql = "SELECT * FROM `events`";
+      $query = $dbh -> prepare($sql);
+      $query->execute();
+      $results=$query->fetchAll(PDO::FETCH_OBJ);
+      if($query->rowCount() > 0)
+      {$cnt=0;
+      foreach($results as $result)
+      {	if($cnt!=3){			?>
+    <div class="col-md-3">
+    <hr>
+    <div class="profile-card-6"><img src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>" class="img img-responsive">
+        <div class="profile-name"><?php echo htmlentities($result->name) ?></div>
+        <div class="profile-position"><?php echo htmlentities($result->date) ?></div>
     </div>
-  </div>
-
-      <div class="top-content">
-          <div class="container-fluid">
-          <div id="previous" class="carousel slide w-100" data-ride="carousel">
-              <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                        <?php 
-$sql = "SELECT * from  events";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$cnt=0;
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{				if($result->name && $cnt==0){
-?>
-<div class="carousel-item col-md-4 active">      
-            <div style="display: flex; min-height: 700px; height: 750px; overflow: hidden;" class="card">
-              <img style="padding-top: 10px; padding-left: 10px; padding-right: 10px;" src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>"
-                class="card-img-top" alt="test">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo htmlentities($result->name) ?></h5>
-                <p class="card-text">
-                  <blockquote>&ldquo;<?php echo htmlentities($result->description) ?>&rdquo;
-                  </blockquote>
-                </p>
-              </div>
-            </div>
-          </div>
-          <?php $cnt=1; ?>
-<?php }else{?>
-<div class="carousel-item col-md-4">      
-            <div style="display: flex; min-height: 700px; height: 750px; overflow: hidden;" class="card">
-              <img style="padding-top: 10px; padding-left: 10px; padding-right: 10px;" src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>"
-                class="card-img-top" alt="">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo htmlentities($result->name) ?></h5>
-                <p class="card-text">
-                  <blockquote>&ldquo;<?php echo htmlentities($result->description) ?>&rdquo;
-                  </blockquote>
-                </p>
-              </div>
-            </div>
-          </div>
-          <?php }}} ?>
-              </div>
-              <a class="carousel-control-prev w-auto" href="#previous" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next w-auto" href="#previous" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-              </a>
-          </div>
-      </div>
-  </div>
-  </div>
-  </div>
 </div>
-    </footer> -->
+      <?php }}}?>
+</div>
+</div>
+
+    </footer>
     <?php include('footer.php'); ?>
   </div>
 
