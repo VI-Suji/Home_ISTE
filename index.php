@@ -221,7 +221,7 @@ include('includes/config.php');
     <div class="service service3">
       <i class="ti-light-bulb"></i>
       <h4>PROJECT DEVELOPMENT</h4>
-      <p> Students of who are doing project work involving product development, fabrication, design, model studies, etc.</p>
+      <p> Students of who are doing project work involving product development,fabrication,model studies, etc.</p>
     </div>
     <div class="service service4">
       <i class="ti-server"></i>
