@@ -26,6 +26,7 @@ include('includes/config.php');
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/test.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
   
 
 </head>
