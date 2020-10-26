@@ -251,7 +251,7 @@ include('includes/config.php');
       {	if($cnt!=3){			?>
     <div class="col-md-4">
     <hr>
-    <div class="profile-card-6"><img src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>" class="img img-responsive">
+    <div class="profile-card-6"><img src="images/<?php echo htmlentities($result->image) ?>" class="img img-responsive">
         <div class="profile-name"><?php echo htmlentities($result->name) ?></div>
         <div class="profile-position"><?php echo htmlentities($result->date) ?></div>
     </div>
