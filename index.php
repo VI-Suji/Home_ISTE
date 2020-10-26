@@ -62,7 +62,7 @@ include('includes/config.php');
         </div>
       </div>
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/bg2.jpg);" >
+      <div class="site-blocks-cover overlay" style="background-image: url(images/bg1.jpg);" >
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
