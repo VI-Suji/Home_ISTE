@@ -113,7 +113,7 @@ include('includes/config.php');
             </div> -->
             <div class="w3-container pt-2 ">
               <!-- <h1>Animation is Fun!</h1> -->
-              <p class="text-white" id="event">A Talk by Dr.Martin Payyappilly (Oct 16 - 7 pm)</p>
+              <p class="text-white" id="event"></p>
             </div>
 
           </div>
@@ -449,7 +449,7 @@ include('includes/config.php');
     });
 
     // Upcoming Events JS Code
-    var eventList = ['A Talk by Dr.Martin Payyappilly (Oct 16 - 7 pm)'];
+    var eventList = [];
     var i = 1;
     function changeEvent() {
 
