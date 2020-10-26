@@ -174,7 +174,7 @@ include('includes/config.php');
                 <center>
               <div class="img-border-md mb-10">
                   <img style="display: flex; height:250px; width:250px;"
-                    src="../Admin_Panel-ISTE/student/admin/images/<?php echo htmlentities($result->image) ?>" alt=""
+                    src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>" alt=""
                     class="img-fluid img-round img-center" />
               </div>
                 <h2 class="heading mb-0"><a href="#"><?php echo htmlentities($result->name) ?></a></h2>
@@ -219,7 +219,7 @@ include('includes/config.php');
                 <center>
               <div class="img-border-md mb-10">
                   <img style="display: flex; height:250px; width:250px;"
-                    src="../Admin_Panel-ISTE/student/admin/images/<?php echo htmlentities($result->image) ?>" alt=""
+                    src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>" alt=""
                     class="img-fluid img-round img-center" />
               </div>
                 <h2 class="heading mb-0"><a href="#"><?php echo htmlentities($result->name) ?></a></h2>
@@ -264,7 +264,7 @@ include('includes/config.php');
                 <center>
               <div class="img-border-md mb-10">
                   <img style="display: flex; height:250px; width:250px;"
-                    src="../Admin_Panel-ISTE/student/admin/images/<?php echo htmlentities($result->image) ?>" alt=""
+                    src="https://www.student.istetkmce.in/admin/images/<?php echo htmlentities($result->image) ?>" alt=""
                     class="img-fluid img-round img-center" />
               </div>
                 <h2 class="heading mb-0"><a href="#"><?php echo htmlentities($result->name) ?></a></h2>
