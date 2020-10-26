@@ -386,7 +386,7 @@ include('includes/config.php');
     <?php include('footer.php'); ?>
   </div>
 
-  <!-- <script id="TelegramLiveChatLoader" data-bot="CEB14C86-FC1E-11EA-ADFB-952423E822B5" src="//livechatbot.net/assets/chat/js/loader.js"></script> -->
+  <script id="TelegramLiveChatLoader" data-bot="CEB14C86-FC1E-11EA-ADFB-952423E822B5" src="//livechatbot.net/assets/chat/js/loader.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
@@ -400,7 +400,7 @@ include('includes/config.php');
   <script src="js/aos.js"></script>
 
 
-  <script src="js/mediaelement-and-player.min.js"></script>
+  <!-- <script src="js/mediaelement-and-player.min.js"></script> -->
 
   <script src="js/main.js"></script>
 
