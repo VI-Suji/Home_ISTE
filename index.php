@@ -473,7 +473,7 @@ include('includes/config.php');
     });
 
     // Upcoming Events JS Code
-    var eventList = ['DETalks on Game Development by Flemin Johnson'];
+    var eventList = [''];
     var i = 1;
     function changeEvent() {
 
