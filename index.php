@@ -221,13 +221,13 @@ include('includes/config.php');
         <div class="profile-position"></div>
     </div>
 </div>
-<div class="col-md-6">
+<!-- <div class="col-md-6">
     <hr>
     <div style="width: 400px;" class="profile-card-6"><img src="images/Flemin.jpeg?>" class="img img-responsive">
         <div class="profile-name">Talk by Flemin Johnson</div>
         <div class="profile-position"></div>
     </div>
-</div>
+</div> -->
 </div>
 </div>
 
