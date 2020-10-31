@@ -12,7 +12,7 @@ include('includes/config.php');
   <title>Official Website Of ISTE TKMCE Chapter</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Work+Sans:300,400,700" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   
@@ -27,7 +27,6 @@ include('includes/config.php');
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/test.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
-  
 
 </head>
 
@@ -207,6 +206,30 @@ include('includes/config.php');
     </div>
   </div>
 </section>
+
+<div class="mt-4 container">
+    <div class="row">
+          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+            <h2>Upcoming Events</h2>
+          </div>
+        </div>
+    <div class="row">
+    <div class="col-md-4">
+    <hr>
+    <div class="profile-card-6"><img src="images/DeTalks.jpeg?>" class="img img-responsive">
+        <div class="profile-name">DETalks</div>
+        <div class="profile-position"></div>
+    </div>
+</div>
+<div class="col-md-4">
+    <hr>
+    <div class="profile-card-6"><img src="images/Flemin.jpeg?>" class="img img-responsive">
+        <div class="profile-name">Talk by Flemin Johnson</div>
+        <div class="profile-position"></div>
+    </div>
+</div>
+</div>
+</div>
 
 <!-- Service end -->
 
@@ -450,7 +473,7 @@ include('includes/config.php');
     });
 
     // Upcoming Events JS Code
-    var eventList = [];
+    var eventList = ['DETalks on Game Development by Flemin Johnson'];
     var i = 1;
     function changeEvent() {
 

@@ -86,6 +86,30 @@ include('includes/config.php');
 
     <!-- Section to work on new Previous Events Start -->
 
+    <div class="mt-4 container">
+    <div class="row">
+          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+            <h2>Upcoming Events</h2>
+          </div>
+        </div>
+    <div class="row">
+    <div class="col-md-4">
+    <hr>
+    <div class="profile-card-6"><img src="images/DeTalks.jpeg?>" class="img img-responsive">
+        <div class="profile-name">DETalks</div>
+        <div class="profile-position"></div>
+    </div>
+</div>
+<div class="col-md-4">
+    <hr>
+    <div class="profile-card-6"><img src="images/Flemin.jpeg?>" class="img img-responsive">
+        <div class="profile-name">Talk by Flemin Johnson</div>
+        <div class="profile-position"></div>
+    </div>
+</div>
+</div>
+</div>
+
      <!-- Previous Events Starts -->
   
      <div class="mt-5 container">
