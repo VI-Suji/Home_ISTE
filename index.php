@@ -222,6 +222,7 @@ include('includes/config.php');
     </div>
 </div>
 <div class="col-md-4">
+
     <hr>
     <div style="width: 400px;" class="profile-card-6"><img src="images/Flemin.jpeg?>" class="img img-responsive">
         <div class="profile-name">Talk by Flemin Johnson</div>
@@ -234,6 +235,7 @@ include('includes/config.php');
         <div class="profile-name">Talk by Gopakumar</div>
         <div class="profile-position"></div>
     </div>
+</div>
 </div>
 </div>
 </div>
@@ -480,7 +482,7 @@ include('includes/config.php');
     });
 
     // Upcoming Events JS Code
-    var eventList = ['DETalks on Game Development by Flemin Johnson'];
+    var eventList = [''];
     var i = 1;
     function changeEvent() {
 

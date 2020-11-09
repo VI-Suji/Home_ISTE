@@ -116,6 +116,7 @@ include('includes/config.php');
 </div>
 </div>
 </div>
+</div>
 
      <!-- Previous Events Starts -->
   
